@@ -68,6 +68,15 @@ Recommended cadence:
 - Daily: ingest + compile for active streams
 - Tue/Fri: stale pages, broken links, conflicting facts, missing next actions
 
+### 6) Weekly synthesis
+
+Create one weekly artifact using `templates/weekly-synthesis.md` to capture:
+- changed assumptions
+- risks
+- decisions
+- unknowns
+- next actions + lineage links
+
 ## Sanitization policy (important)
 
 This repo is designed for public sharing. Keep it safe:
@@ -85,7 +94,15 @@ See `docs/sanitization-checklist.md` for a pre-publish checklist.
 - `research/knowledge-system/README.md` – loop and cadence
 - `research/knowledge-system/index.md` – stream index and health checklist
 - `scripts/knowledge-compile.sh` – sample ingestion/compile script (sanitized)
-- `examples/` – sample raw and compiled files
+- `scripts/sanitize-scan.sh` – pre-publish quick sensitive-pattern scanner
+- `docs/public-redaction-policy.md` – what to strip/replace before publishing
+- `docs/quality-gates.md` – metadata, contradiction, freshness, lineage gates
+- `docs/maturity-model.md` – L1→L5 adoption path
+- `docs/workflows.md` – practical daily/weekly command flows
+- `docs/metrics.md` – measurable ROI indicators
+- `docs/anti-patterns.md` – common failure modes
+- `templates/weekly-synthesis.md` – reusable weekly digest template
+- `examples/` – sample raw, compiled, and weekly synthesis files
 
 ## License
 
