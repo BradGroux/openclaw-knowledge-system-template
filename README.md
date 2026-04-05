@@ -33,6 +33,16 @@ scripts/
 └── knowledge-compile.sh
 ```
 
+## What’s new in v2
+
+- Redaction policy with practical before/after examples
+- Quality gates for metadata, contradiction checks, freshness, and lineage
+- Maturity model (L1→L5) to stage adoption
+- Operational workflows (daily/weekly)
+- Lightweight ROI metrics
+- Anti-pattern catalog
+- Weekly synthesis template + example artifact
+
 ## Quick start
 
 ### 1) Create your first streams
@@ -76,6 +86,57 @@ Create one weekly artifact using `templates/weekly-synthesis.md` to capture:
 - decisions
 - unknowns
 - next actions + lineage links
+
+## Agent ingestion flow (drop-in workflow)
+
+Use this when wiring the repo into an agentic loop.
+
+### Step 1: Bootstrap once
+
+```bash
+git clone https://github.com/BradGroux/openclaw-knowledge-system-template.git
+cd openclaw-knowledge-system-template
+```
+
+### Step 2: Define streams
+Create stream folders under:
+- `research/knowledge-system/raw/<stream>/`
+- `research/knowledge-system/compiled/<stream>/`
+
+Start with 1–3 streams for signal quality.
+
+### Step 3: Ingest daily raw evidence
+For each active stream/date:
+1. Add snapshots (notes, decisions, task exports, etc.)
+2. Update `SOURCES.md` with required metadata:
+   - `source`
+   - `captured_at`
+   - `tags`
+   - `confidence`
+
+### Step 4: Run compile pass
+```bash
+bash scripts/knowledge-compile.sh "$(date +%F)"
+```
+
+### Step 5: Query protocol for agents
+Before answering non-trivial requests:
+1. Read `compiled/<stream>/overview.md`
+2. Read latest `compiled/<stream>/runs/<date>.md`
+3. Trace to raw `SOURCES.md` when confidence is low or conflicts appear
+4. Only then synthesize response or plan
+
+### Step 6: Weekly governance
+- Run Tue/Fri health checks (`docs/quality-gates.md`)
+- Publish one weekly synthesis from `templates/weekly-synthesis.md`
+- Track metrics in `docs/metrics.md`
+
+### Step 7: Public-sharing guardrail
+Before publishing or syncing outside your org:
+```bash
+bash scripts/sanitize-scan.sh .
+```
+Then complete `docs/sanitization-checklist.md` and `docs/public-redaction-policy.md` review.
 
 ## Sanitization policy (important)
 
