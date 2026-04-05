@@ -174,4 +174,6 @@ MIT (see `LICENSE`).
 ## Credits
 
 - Conceptual inspiration: [Andrej Karpathy](https://github.com/karpathy)
+- OpenClaw ecosystem and community: [openclaw](https://github.com/openclaw/openclaw)
+- Peter Steinberger: [@steipete](https://github.com/steipete)
 - Operational adaptation and template packaging: Digital Meld / OpenClaw workflow patterns
