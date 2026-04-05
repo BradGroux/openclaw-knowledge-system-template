@@ -2,7 +2,7 @@
 
 A public, sanitized template of the **raw → compiled knowledge loop** we implemented internally for OpenClaw operations.
 
-> Inspired by ideas shared by [@karpathy](https://x.com/karpathy/status/2039805659525644595) (original tweet). Thank you for pushing practical, corpus-first workflows into the mainstream.
+> Inspired by ideas shared by [@karpathy](https://x.com/Karpathy) ([original tweet](https://x.com/BradGroux/status/2040648338589069598)). Thank you for pushing practical, corpus-first workflows into the mainstream.
 
 ## Why this exists
 
